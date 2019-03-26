@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <name>FCM Server</name>
-    <description>Firebas Cloud Messaging on server side</description>
+    <description>Firebase Cloud Messaging on server side</description>
     <url>https://github.com/Morteza-j8/fcm-server</url>
 
     <dependencies>
@@ -52,10 +52,35 @@
     </licenses>
 
 
+    <scm>
+        <connection>scm:git:git://github.com/Morteza-j8/fcm-server.git</connection>
+        <developerConnection>scm:git:ssh:github.com:Morteza-j8/fcm-server.git</developerConnection>
+        <url>http://github.com/Morteza-j8/fcm-server/master</url>
+    </scm>
+
     <developers>
         <developer>
             <name>Morteza Jalambadani</name>
         </developer>
     </developers>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
