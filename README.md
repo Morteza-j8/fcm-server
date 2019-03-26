@@ -8,8 +8,7 @@ Firebase cloud messaging server side (send message to client)
     <artifactId>fcm-server</artifactId>
     <version>1.0.1</version>
     <type>pom</type>
-  </dependency>
-</code>
+</dependency>
 
 
 ##### License
