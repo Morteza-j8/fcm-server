@@ -1,5 +1,4 @@
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.morteza-j8/fcm-server/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.morteza-j8/fcm-server.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.morteza-j8%22%20AND%20a:%22fcm-server%22)
 # FCM SERVER
 Firebase cloud messaging server side (send message to client)
 
