@@ -10,13 +10,13 @@ import java.util.List;
  * project name:  FCM Server
  * 19 March 2019
  **/
-public class FireBaseNotificationRequest {
+public class FirebaseNotificationRequest {
 
 
 
 
     @JsonProperty("data")
-    private FireBaseNotificationData data;
+    private FirebaseNotificationData data;
 
 
     @JsonProperty("registration_ids")
@@ -37,19 +37,19 @@ public class FireBaseNotificationRequest {
 
 
 
-    public FireBaseNotificationRequest(FireBaseNotificationData data, List<String> registrationIds) {
+    public FirebaseNotificationRequest(FirebaseNotificationData data, List<String> registrationIds) {
         this.data = data;
         this.registrationIds = registrationIds;
     }
 
-    public FireBaseNotificationRequest(FireBaseNotificationData data, List<String> registrationIds, String collapseKey , long timeToLive) {
+    public FirebaseNotificationRequest(FirebaseNotificationData data, List<String> registrationIds, String collapseKey , long timeToLive) {
         this.data = data;
         this.registrationIds = registrationIds;
         this.collapseKey = collapseKey;
         this.timeToLive = timeToLive;
     }
 
-    public FireBaseNotificationRequest(FireBaseNotificationData data, List<String> registrationIds, long timeToLive) {
+    public FirebaseNotificationRequest(FirebaseNotificationData data, List<String> registrationIds, long timeToLive) {
         this.data = data;
         this.registrationIds = registrationIds;
         this.timeToLive = timeToLive;
@@ -62,10 +62,10 @@ public class FireBaseNotificationRequest {
 
 
 
-    public FireBaseNotificationData getData() {
+    public FirebaseNotificationData getData() {
         return data;
     }
-    public void setData(FireBaseNotificationData data) {
+    public void setData(FirebaseNotificationData data) {
         this.data = data;
     }
 

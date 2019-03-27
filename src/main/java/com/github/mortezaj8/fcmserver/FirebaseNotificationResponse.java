@@ -10,7 +10,7 @@ import java.util.List;
  * project name:  FCM Server
  * 19 March 2019
  **/
-public class FireBaseNotificationResponse {
+public class FirebaseNotificationResponse {
 
     //json format response
     /*
@@ -38,7 +38,7 @@ public class FireBaseNotificationResponse {
     @JsonProperty("canonical_ids")
     private long canonicalIds;
     @JsonProperty("results")
-    private List<FireBaseNotificationResponseResult> results;
+    private List<FirebaseNotificationResponseResult> results;
 
 
 
@@ -78,10 +78,10 @@ public class FireBaseNotificationResponse {
     }
 
 
-    public List<FireBaseNotificationResponseResult> getResults() {
+    public List<FirebaseNotificationResponseResult> getResults() {
         return results;
     }
-    public void setResults(List<FireBaseNotificationResponseResult> results) {
+    public void setResults(List<FirebaseNotificationResponseResult> results) {
         this.results = results;
     }
 }

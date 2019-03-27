@@ -10,21 +10,18 @@ import java.util.List;
  * project name:  FCM Server
  * 19 March 2019
  **/
-public class FireBaseNotification {
-
-
-    protected static final String CUSTOMER_SERVER_KEY =
-            "";
+public abstract class FirebaseNotification {
 
 
 
 
+    protected abstract String getFirebaseRemoteToken();
 
 
 
 
 
-    protected void sendNotification(List<String> playerIds, String type, Object payload) {
+    public void sendNotification(List<String> playerIds, String type, Object payload) {
 
 
         playerIds = fetchNoneNullItems(playerIds);
@@ -32,14 +29,15 @@ public class FireBaseNotification {
             return;
         }
 
-        FireBaseNotificationRequest request = new FireBaseNotificationRequest(new FireBaseNotificationData(type.toString() , payload) , playerIds );
-        FireBaseNotificationRunnable runnable = new FireBaseNotificationRunnable( request );
+        FirebaseNotificationRequest request = new FirebaseNotificationRequest(new FirebaseNotificationData(type.toString() , payload) , playerIds );
+        FirebaseNotificationRunnable runnable = new FirebaseNotificationRunnable( request , getFirebaseRemoteToken() );
 
         (new Thread(runnable)).start();
 
     }
 
-    protected void sendNotification(String playerId, String type, Object payload) {
+
+    public void sendNotification(String playerId, String type, Object payload) {
         List<String> lisIds = new ArrayList<String>();
         lisIds.add(playerId);
         sendNotification(lisIds , type , payload );

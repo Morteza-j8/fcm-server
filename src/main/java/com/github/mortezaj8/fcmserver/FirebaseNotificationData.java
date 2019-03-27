@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * project name:  FCM Server
  * 19 March 2019
  **/
-public class FireBaseNotificationData {
+public class FirebaseNotificationData {
 
     @JsonProperty("type")
     private String type;
@@ -51,7 +51,7 @@ public class FireBaseNotificationData {
 
 
 
-    public FireBaseNotificationData(String type, Object content) {
+    public FirebaseNotificationData(String type, Object content) {
         this.type = type;
         try {
             this.content = (new ObjectMapper()).writeValueAsString(content).replaceAll("\"" , "\\\"");

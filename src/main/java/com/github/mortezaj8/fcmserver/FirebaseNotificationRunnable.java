@@ -9,14 +9,18 @@ import retrofit2.Response;
  * project name:  FCM Server
  * 19 March 2019
  **/
-public class FireBaseNotificationRunnable implements Runnable {
+public class FirebaseNotificationRunnable implements Runnable {
 
 
 
-    private FireBaseNotificationRequest notificationRequest;
+    private final FirebaseNotificationRequest notificationRequest;
 
-    public FireBaseNotificationRunnable(FireBaseNotificationRequest nofiticationRequest) {
-        this.notificationRequest = nofiticationRequest;
+    private final String firebaseServerToken;
+
+
+    public FirebaseNotificationRunnable(FirebaseNotificationRequest notificationRequest, String firebaseServerToken) {
+        this.notificationRequest = notificationRequest;
+        this.firebaseServerToken = firebaseServerToken;
 
     }
 
@@ -24,14 +28,18 @@ public class FireBaseNotificationRunnable implements Runnable {
 
 
         try {
-            Call<FireBaseNotificationResponse> caller =
-                    FirebaseRetrofitFactory.getInstance().getFirebaseEndPoint().sendCustomerNotification(notificationRequest);
+            Call<FirebaseNotificationResponse> caller =
+                    FirebaseRetrofitFactory.getInstance().getFirebaseEndPoint().sendCustomerNotification(
+                            firebaseServerToken,
+                            notificationRequest
 
-            Response<FireBaseNotificationResponse> responseBody =
+                    );
+
+            Response<FirebaseNotificationResponse> responseBody =
                     caller.execute();
 
             if(responseBody.isSuccessful()){
-                FireBaseNotificationResponse response = responseBody.body();
+                FirebaseNotificationResponse response = responseBody.body();
                 showLog(response, notificationRequest);
 
             }else{
@@ -46,7 +54,9 @@ public class FireBaseNotificationRunnable implements Runnable {
 
     }
 
-    private static void showLog(FireBaseNotificationResponse response , FireBaseNotificationRequest request){
+
+
+    private static void showLog(FirebaseNotificationResponse response , FirebaseNotificationRequest request){
         StringBuilder builder = new StringBuilder();
         builder.append("\n+-------------------------------------------------------+\n");
         builder.append(String.format("|      success: %20d                    |\n",response.getSuccess()));

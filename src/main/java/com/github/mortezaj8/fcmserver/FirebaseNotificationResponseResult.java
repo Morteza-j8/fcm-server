@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  **/
 
 
-public class FireBaseNotificationResponseResult {
+public class FirebaseNotificationResponseResult {
 
     @JsonProperty("message_id")
     private String messageId;
