@@ -9,8 +9,7 @@ Firebase cloud messaging server side (send message to client)
 <dependency>
     <groupId>com.github.morteza-j8</groupId>
     <artifactId>fcm-server</artifactId>
-    <version>1.0.1</version>
-    <type>pom</type>
+    <version>1.0.5</version>
 </dependency>
 
 ```
