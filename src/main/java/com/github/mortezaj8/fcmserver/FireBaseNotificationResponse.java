@@ -1,3 +1,5 @@
+package com.github.mortezaj8.fcmserver;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
