@@ -7,7 +7,7 @@
 
     <groupId>com.github.morteza-j8</groupId>
     <artifactId>fcm-server</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
 
     <name>FCM Server</name>
     <description>Firebase Cloud Messaging on server side</description>

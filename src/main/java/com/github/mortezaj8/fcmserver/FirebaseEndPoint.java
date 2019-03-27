@@ -22,7 +22,7 @@ public interface FirebaseEndPoint {
     })
     @POST("send")
     Call<FirebaseNotificationResponse> sendCustomerNotification(
-            @Header( "Authorization:key=" ) String serverKet,
+            @Header( "Authorization:key" ) String serverKet,
             @Body FirebaseNotificationRequest request
     );
 

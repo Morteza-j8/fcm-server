@@ -11,7 +11,7 @@ Maven:
 <dependency>
     <groupId>com.github.morteza-j8</groupId>
     <artifactId>fcm-server</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
 </dependency>
 
 ```
@@ -20,7 +20,7 @@ Maven:
 
 Gradle:
 ```xml
-implementation 'com.github.morteza-j8:fcm-server:1.0.8'
+implementation 'com.github.morteza-j8:fcm-server:1.0.9'
 ```
 
 
