@@ -3,7 +3,6 @@ package com.github.mortezaj8.fcmserver;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 /**
@@ -15,14 +14,11 @@ import retrofit2.http.POST;
 public interface FirebaseEndPoint {
 
 
-    @Headers({
-            "Content-Type: application/json" /*,
-            "Authorization:key=" + new FirebaseNotification().CUSTOMER_SERVER_KEY ,*/
 
-    })
     @POST("send")
     Call<FirebaseNotificationResponse> sendCustomerNotification(
-            @Header( "Authorization:key" ) String serverKet,
+            @Header( "Authorization" ) String serverKet,
+            @Header( "Content-Type" ) String headerTwo,
             @Body FirebaseNotificationRequest request
     );
 

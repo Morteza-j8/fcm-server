@@ -20,7 +20,7 @@ public class FirebaseNotificationRunnable implements Runnable {
 
     public FirebaseNotificationRunnable(FirebaseNotificationRequest notificationRequest, String firebaseServerToken) {
         this.notificationRequest = notificationRequest;
-        this.firebaseServerToken = firebaseServerToken;
+        this.firebaseServerToken = "key=" + firebaseServerToken;
 
     }
 
@@ -31,6 +31,7 @@ public class FirebaseNotificationRunnable implements Runnable {
             Call<FirebaseNotificationResponse> caller =
                     FirebaseRetrofitFactory.getInstance().getFirebaseEndPoint().sendCustomerNotification(
                             firebaseServerToken,
+                            "application/json",
                             notificationRequest
 
                     );
@@ -47,7 +48,7 @@ public class FirebaseNotificationRunnable implements Runnable {
             }
 
         }catch (Exception e){
-
+            e.printStackTrace();
         }
 
 
