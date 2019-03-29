@@ -52,7 +52,7 @@ public class FirebaseHandler extends FirebaseNotification {
 Server Key is accessible via your <a href="https://console.firebase.google.com/">Firebase Console</a> dashboard.
  
 
-Step 2.send message to client:
+<b>Step 2</b>.send message to client:
 
     FirebaseHandler.getInstance()
                     .sendNotification( 
